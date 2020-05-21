@@ -6,9 +6,14 @@ server:
 # http://localhost:8091/h2-console
 # Enabling H2 Console
 spring:
+  boot:
+    admin:
+        client:  
+            url: http://localhost:8086 
   h2:
     console:
       enabled: true
+      
   # ===============================
   # DB
   # ===============================
