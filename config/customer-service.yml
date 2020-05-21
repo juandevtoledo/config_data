@@ -9,6 +9,10 @@ spring:
   h2:
     console:
       enabled: true
+  boot:
+    admin:
+        client:  
+            url: http://localhost:8086 
   # ===============================
   # DB
   # ===============================
