@@ -6,6 +6,9 @@ server:
 # http://localhost:8093/h2-console
 # Enabling H2 Console
 spring:
+# ===============================
+# boot / admin
+# ===============================
   boot:
     admin:
         client:  
@@ -36,13 +39,13 @@ spring:
         show_sql: true
         use_sql_comments: false
         format_sql: false
-logging:
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+# ===============================
+# EUREKA
+# ===============================
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8099/eureka/    
+      defaultZone: http://registry-service-primary:8083/eureka/,http://egistry-service-secondary:8084/eureka/,http://registry-service-tertiary:8085/eureka/
 Feign:
   hystrix:
     enabled: true
@@ -51,4 +54,5 @@ management:
     web:
       exposure:
         include: "*"
+
 
